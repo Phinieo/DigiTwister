@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/OverworldScene.unity
     guid: f11846a34d7a9434293f24a7a7f0e473
+  - enabled: 1
+    path: Assets/_Project/Scenes/Level1Scene.unity
+    guid: 94efea49d745e0c4889baa8ae074d384
   m_configObjects: {}

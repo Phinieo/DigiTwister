@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TalkingSpriteController : MonoBehaviour
@@ -17,6 +18,39 @@ public class TalkingSpriteController : MonoBehaviour
 
     private float timer;
     private bool showingOpen;
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Unsubscribe();
+
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (AudioController.Instance == null) return;
+
+        Debug.Log("TalkingIndicatorSubscribed");
+        AudioController.Instance.OnNarrationClipStarted += HandleNarrationStarted;
+        AudioController.Instance.OnNarrationClipStopped += HandleNarrationEnded;
+    }
+
+    private void Unsubscribe()
+    {
+
+        if (AudioController.Instance == null) return;
+
+        Debug.Log("TalkingIndicatorUnsubscribed");
+        AudioController.Instance.OnNarrationClipStarted -= HandleNarrationStarted;
+        AudioController.Instance.OnNarrationClipStopped -= HandleNarrationEnded;
+
+    }
 
     private void Awake()
     {
@@ -56,5 +90,17 @@ public class TalkingSpriteController : MonoBehaviour
         showingOpen = false;
         characterImage.sprite = mouthClosed;
         timer = 0f;
+    }
+
+    private void HandleNarrationStarted(AudioClip clip)
+    {
+        isTalking = true;
+        SetMouthClosed();
+    }
+
+    private void HandleNarrationEnded(AudioClip clip)
+    {
+        isTalking = false;
+        SetMouthClosed();
     }
 }

@@ -9,6 +9,8 @@ public class OverworldController : MonoBehaviour
     [SerializeField] private Transform locationsParent;
     [SerializeField] private Camera cam;
 
+
+
     [Header("Scrolling")]
     [SerializeField] private float scrollSpeed = 5f;
     [SerializeField] private float verticalScreenPadding = 1.5f;
@@ -19,6 +21,8 @@ public class OverworldController : MonoBehaviour
     private float mapStartY;
 
     private float targetMapY;
+
+    private string targetLevelScene;
 
     private void Awake()
     {
@@ -32,6 +36,7 @@ public class OverworldController : MonoBehaviour
         mapStartY = overworldMap.position.y;
         targetMapY = mapStartY;
 
+
         // Start at first location
         SnapToLocation(0);
     }
@@ -43,7 +48,6 @@ public class OverworldController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Debug.Log(targetMapY);
         Vector3 pos = overworldMap.position;
         pos.y = Mathf.Lerp(pos.y, targetMapY, Time.deltaTime * scrollSpeed);
         overworldMap.position = pos;
@@ -52,6 +56,9 @@ public class OverworldController : MonoBehaviour
 
     private void HandleInput()
     {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+            EnterLevel();
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
             MoveSelection(1);
 
@@ -79,6 +86,9 @@ public class OverworldController : MonoBehaviour
         //playerIndicator.position = locations[index].position;
         Vector3 newPosition = new Vector3(locations[index].position.x, locations[index].position.y, -0.1f);
         playerIndicator.position = newPosition;
+
+        targetLevelScene = locations[index].GetComponent<MapLevelNode>().levelTargetName;
+        Debug.Log("Updated TargetLevel to: " + targetLevelScene);
     }
 
     private void ScrollMapIfNeeded()
@@ -126,5 +136,13 @@ public class OverworldController : MonoBehaviour
         // Clamp bottom
         if (targetMapY > mapStartY)
             targetMapY = mapStartY;
+    }
+
+    private void EnterLevel()
+    {
+        Debug.Log("EnterLevel: " + targetLevelScene);
+        AudioController.Instance.StopAllClips();
+        SceneTransitionManager.Instance.FadeScene(targetLevelScene);
+
     }
 }

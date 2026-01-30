@@ -18,7 +18,6 @@ public class SceneTransitionManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -29,6 +28,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        AudioController.Instance.StopAllClips();
         SceneManager.LoadScene(sceneName);
     }
 
@@ -40,6 +40,7 @@ public class SceneTransitionManager : MonoBehaviour
     private IEnumerator LoadAfterDelay(string sceneName, float delay)
     {
         yield return new WaitForSeconds(delay);
+        AudioController.Instance.StopAllClips();
         SceneManager.LoadScene(sceneName);
     }
 
@@ -55,6 +56,7 @@ public class SceneTransitionManager : MonoBehaviour
         yield return fadeController.FadeOutCoroutine();
 
         // Load new scene
+        AudioController.Instance.StopAllClips();
         SceneManager.LoadScene(sceneName);
 
         // Wait one frame so the new scene initializes

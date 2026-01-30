@@ -38,6 +38,7 @@ public class SplashScreenController : MonoBehaviour
     private IEnumerator NarrationFlow()
     {
         // Play narration
+        Debug.Log("SplashScreenPlayingAudio");
         AudioController.Instance.PlayNarrationClip(narrationClip);
 
         // Wait until narration ends OR input is pressed

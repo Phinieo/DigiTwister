@@ -39,7 +39,6 @@ public class AudioController : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -91,6 +90,7 @@ public class AudioController : MonoBehaviour
         narrationSource.clip = clip;
         narrationSource.Play();
 
+        Debug.Log("OnNarrationClipStartedInvoke");
         OnNarrationClipStarted?.Invoke(clip);
     }
 
@@ -160,5 +160,12 @@ public class AudioController : MonoBehaviour
         musicSource.time = 0f;
 
         OnMusicClipStopped?.Invoke(stoppedClip);
+    }
+
+    public void StopAllClips()
+    {
+        StopNarrationClip();
+        StopEffectClip();
+        StopMusicClip();
     }
 }
