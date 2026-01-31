@@ -55,9 +55,16 @@ public class LevelController : MonoBehaviour
         game.EndGame();
 
         if (result == true)
+        {
             gamesCompleted++;
+            Debug.Log("MiniGame Win");
+        }
         else
+        {
             hearts--;
+            Debug.Log("MiniGame Loss");
+        }
+
 
         Destroy(currentMinigame);
         yield return new WaitForSeconds(0.5f); // pacing
@@ -66,8 +73,17 @@ public class LevelController : MonoBehaviour
     void EndLevel()
     {
         if (gamesCompleted >= gamesToWin)
+        {
             Debug.Log("LEVEL PASSED");
+            SceneTransitionManager.Instance.FadeScene("OverworldScene");
+        }
         else
+        {
+
             Debug.Log("LEVEL FAILED");
+            SceneTransitionManager.Instance.FadeScene("OverworldScene");
+
+        }
+
     }
 }

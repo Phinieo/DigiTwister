@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigamePrefabs:
   - {fileID: 978929962200665170, guid: cb4c29a2be46f9d49893dca47464b6fd, type: 3}
-  gamesToWin: 10
+  gamesToWin: 1
   startingHearts: 3
   minigameTimeLimit: 5
   spawnPoint: {fileID: 0}
@@ -608,7 +608,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!224 &1344934345
 RectTransform:
@@ -785,6 +785,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 963194228}
-  - {fileID: 1344934345}
   - {fileID: 1934159657}
   - {fileID: 389877296}
+  - {fileID: 1344934345}

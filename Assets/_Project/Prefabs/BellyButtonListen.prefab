@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3259457398506412188}
-  - component: {fileID: 3284289598692998529}
+  - component: {fileID: -2229576770205908610}
   m_Layer: 0
-  m_Name: NosePressMinigame
+  m_Name: BellyButtonListen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 3984013997477288898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3284289598692998529
+--- !u!114 &-2229576770205908610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,16 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 978929962200665170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7736898b19db3d64d9650b062243ac2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cd94b8862df3714aa095ea6c14e49b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrationClip: {fileID: 8300000, guid: 890006d484b1e04438dada74ef9734f6, type: 3}
-  spacePressSfx: {fileID: 8300000, guid: 96d685dfd93c34145b22fcefdc6ac3ef, type: 3}
-  backgroundImage: {fileID: 4316528159150024154}
-  backgroundStages:
-  - {fileID: 21300000, guid: fb31908e6a03d1446b8d9b0c3afde84d, type: 3}
-  - {fileID: 21300000, guid: 6ea2d03b6f77790498436753f497b3a4, type: 3}
-  - {fileID: 21300000, guid: a2ffc389e627ecb46a154fe177108b55, type: 3}
+  narrationClip: {fileID: 8300000, guid: 1e817ce2e483cd44d92a036ae70dbbe2, type: 3}
 --- !u!1 &3904938284998149255
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS SPACE WITH YOUR NOSE TO EAT THE GRAPES!
+  m_text: USE YOUR EARS TO LISTEN TO ME TALK ABOUT MY BELLY BUTTON THEORIES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -251,7 +245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb31908e6a03d1446b8d9b0c3afde84d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9955355bf0b43784b8267a87f4fcf1c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

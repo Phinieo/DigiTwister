@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3259457398506412188}
   - component: {fileID: 3284289598692998529}
   m_Layer: 0
-  m_Name: NosePressMinigame
+  m_Name: MayoLickMinigame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7736898b19db3d64d9650b062243ac2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrationClip: {fileID: 8300000, guid: 890006d484b1e04438dada74ef9734f6, type: 3}
-  spacePressSfx: {fileID: 8300000, guid: 96d685dfd93c34145b22fcefdc6ac3ef, type: 3}
-  backgroundImage: {fileID: 4316528159150024154}
+  narrationClip: {fileID: 8300000, guid: 147947e1c8e9fd8439120977ef41911f, type: 3}
+  spacePressSfx: {fileID: 8300000, guid: 50d1a769c2846cd408c54fc33af6c618, type: 3}
+  backgroundImage: {fileID: 184521240668740016}
   backgroundStages:
-  - {fileID: 21300000, guid: fb31908e6a03d1446b8d9b0c3afde84d, type: 3}
-  - {fileID: 21300000, guid: 6ea2d03b6f77790498436753f497b3a4, type: 3}
-  - {fileID: 21300000, guid: a2ffc389e627ecb46a154fe177108b55, type: 3}
+  - {fileID: 21300000, guid: 60dbd9b57d4818f48bfcd939077dd42a, type: 3}
+  - {fileID: 21300000, guid: fa45ba6c929e0b0428269f2fddfd7be6, type: 3}
+  - {fileID: 21300000, guid: a064ace0e3b2e8645877ad39d2508c89, type: 3}
+  - {fileID: 21300000, guid: ab075783190ac4d4ca210db9a17d3ef3, type: 3}
+  - {fileID: 21300000, guid: 372833d6d5829e448ad3dee2bcb769e7, type: 3}
 --- !u!1 &3904938284998149255
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS SPACE WITH YOUR NOSE TO EAT THE GRAPES!
+  m_text: PRESS SPACE WITH YOUR TONGUE TO LICK THE MAYO OFF THE SPOON!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -251,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb31908e6a03d1446b8d9b0c3afde84d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c0c6acd72f4fdd45bfd772da6b74d0c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -293,6 +295,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8848550143582626680}
+  - {fileID: 6098647113681050071}
   - {fileID: 6043611988042609601}
   m_Father: {fileID: 3259457398506412188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,3 +367,78 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &8558677400598921118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6098647113681050071}
+  - component: {fileID: 2869349578637148438}
+  - component: {fileID: 184521240668740016}
+  m_Layer: 5
+  m_Name: mayoSpoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6098647113681050071
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558677400598921118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3984013997477288898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2869349578637148438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558677400598921118}
+  m_CullTransparentMesh: 1
+--- !u!114 &184521240668740016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558677400598921118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 60dbd9b57d4818f48bfcd939077dd42a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
